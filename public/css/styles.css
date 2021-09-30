@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    color: aliceblue;
+}
+
+h2 {
+    color: #E9BCB7;
+}
+
+.app {
+    background: #859376;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-navbar {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #295149;
+    /* box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.57);
+    -webkit-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.57);
+    -moz-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.57); */
+}
+
+.primary-navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-input {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.form-submit {
+    padding: 1rem;
+    color: aliceblue;
+    background-color: #C5AFA0;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}
+
+.form-submit:hover {
+    background-color: #fce0ce;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    height: inherit;
+}
+.error {
+    justify-content: center;
+    height: inherit;
+    text-align: center;
+    color: rgba(220, 20, 60, 0.63);
+}
+
+.material-icons {
+    padding: 0 0.5rem 0 0.2rem;
+}
+
+.card {
+    width: 66%;
+    padding: 1rem 0 1rem 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    justify-content: space-between;
+    align-items: center;
+}
+/* 
+.place-header {
+    color: aliceblue;
+    font-size: large;
+} */
+
+.row .cell h2 {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.row .cell h4 {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+@media (max-width: 480px) {
+  .primary-navbar {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .primary-navbar span {
+    margin-bottom: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-content {
+      width: 100%;
+  }
+  .form-input {
+    width: 68%;
+  }
+  .form-submit {
+      width: 30%;
+  }
+  .card {
+    width: 100%;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+}

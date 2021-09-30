@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/8f/Breeze-weather-hail-48.svg" type="image/svg" sizes="16x16">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <nav class="primary-navbar">
+            <span class="nav-brand">
+                <h1><a href="/">Weather App</a></h1>
+            </span>
+            <span>
+                <form class="nav-content location" method="POST" action="/" >
+                    <input class="form-input text-field" type="text" name="city_name" placeholder="City Name" required>
+                    <button class="form-submit btn" type="submit">Submit</button>
+                </form>
+            </span>
+        </nav>
+        <div class="main-content">
+            <% if (error) {%>
+                <div class="error col">
+                    <h1>Error!</h1>
+                    <p>
+                        <%= error%>
+                    </p>
+                </div>
+                <% } %>
+                    <% if (!display && !error && !loading) {%>
+                        <div class="row card">
+                            <h1 class="welcome-text">
+                                Get Started with this app, Enter location in the input box above to get weather data!
+                            </h1>
+                        </div>
+                        <% } %>
+                        <% if (!display && !error && loading) {%>
+                            <div class="row card">
+                                <h1 class="loading">
+                                    Loading...
+                                </h1>
+                            </div>
+                        <% } %>
+                            <% if (display) {%>
+                                <div class="card">
+                                        <div class="row header">
+                                            <div class="col">
+                                                <h1 class="place-header">
+                                                    <%= weather.city %>
+                                                </h1>
+                                                <h3>
+                                                    <%= weather.country %>
+                                                </h3>
+                                            </div>
+                                            <div class="col">
+                                                <img src="<%= weather.icon %>" alt="<%= weather.main %> icon">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="cell">
+                                                <h2><span
+                                                        class="material-icons">thermostat</span><span>Temperature</span>
+                                                </h2>
+                                                <h4>
+                                                    Current Temp <span class="material-icons">thermostat_auto</span>:
+                                                    <%= Math.round(weather.current_temp) %> &#176;C
+                                                </h4>
+                                                <h4>
+                                                    Min Temp <span class="material-icons">ac_unit</span>: <%=
+                                                        Math.round(weather.temp_min) %> &#176;C
+                                                </h4>
+                                                <h4>
+                                                    Max Temp <span class="material-icons">local_fire_department</span>:
+                                                    <%= Math.round(weather.temp_max) %> &#176;C
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="cell">
+                                                <h2><span
+                                                        class="material-icons">filter_drama</span><span>Atmosphere</span>
+                                                </h2>
+                                                <h4>
+                                                    Pressure <span class="material-icons">air</span> : <%=
+                                                        weather.pressure %> hPa
+                                                </h4>
+                                                <h4>
+                                                    Humidity <span class="material-icons">water_drop</span> : <%=
+                                                        weather.humidity %> %
+                                                </h4>
+                                                <h4>
+                                                    Visibility <span class="material-icons">visibility</span> : <%=
+                                                        weather.visibility / 1000 %> km
+                                                </h4>
+                                                <h4>
+                                                    Clouds <span class="material-icons">cloud_circle</span> : <%=
+                                                        weather.clouds %> %
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="cell">
+                                                <h2><span class="material-icons">schedule</span><span>Time</span></h2>
+                                                <h4>
+                                                    Timezone <span class="material-icons">public</span> : UTC<%=
+                                                        weather.timezone>= 0 ? '+' : '-'%><%= new
+                                                            Date(Math.abs(weather.timezone*1000)).toISOString().slice(11,16)
+                                                            %>
+                                                </h4>
+                                                <h4>
+                                                    Sunrise <span class="material-icons">wb_sunny</span> : <% let
+                                                        effective_sunrise_ms=(weather.timezone>= 0) ? weather.sunrise +
+                                                        weather.timezone : weather.sunrise - weather.timezone;
+                                                        let sunrise_time = new Date(effective_sunrise_ms *
+                                                        1000).toISOString().slice(11,16);
+                                                        let sunrise_hours = sunrise_time.slice(0,2);
+                                                        let sunrise_minutes = sunrise_time.slice(4,6);
+                                                        
+                                                        new_sunrise_time = sunrise_hours > 12 ?
+                                                        `0${sunrise_hours-12}:0${sunrise_minutes}
+                                                        pm`:`${sunrise_hours}:0${sunrise_minutes} am`;
+                                                        %> <%= new_sunrise_time %>
+                                                </h4>
+                                                <h4>
+                                                    Sunset <span class="material-icons">nights_stay</span> : <% let
+                                                        effective_sunset_ms=(weather.timezone>= 0) ? weather.sunset +
+                                                        weather.timezone : weather.sunset - weather.timezone;
+                                                        let sunset_time = new Date(effective_sunset_ms *
+                                                        1000).toISOString().slice(11,16);
+                                                        let sunset_hours = sunset_time.slice(0,2);
+                                                        let sunset_minutes = sunset_time.slice(4,6);
+                                                        
+                                                        new_sunset_time = sunset_hours > 12 ?
+                                                        `0${sunset_hours-12}:0${sunset_minutes}
+                                                        pm`:`${sunset_hours}:0${sunset_minutes} am`;
+                                                        %> <%= new_sunset_time %>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                </div>
+        </div>
+        <% } %>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
