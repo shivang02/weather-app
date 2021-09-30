@@ -117,9 +117,8 @@
                                                             %>
                                                 </h4>
                                                 <h4>
-                                                    Sunrise <span class="material-icons">wb_sunny</span> : <% let
-                                                        effective_sunrise_ms=(weather.timezone>= 0) ? weather.sunrise +
-                                                        weather.timezone : weather.sunrise - weather.timezone;
+                                                    Sunrise <span class="material-icons">wb_sunny</span> : <% 
+                                                    let effective_sunrise_ms=weather.sunrise + weather.timezone;
                                                         let sunrise_time = new Date(effective_sunrise_ms *
                                                         1000).toISOString().slice(11,16);
                                                         let sunrise_hours = sunrise_time.slice(0,2);
@@ -132,11 +131,12 @@
                                                 </h4>
                                                 <h4>
                                                     Sunset <span class="material-icons">nights_stay</span> : <% let
-                                                        effective_sunset_ms=(weather.timezone>= 0) ? weather.sunset +
-                                                        weather.timezone : weather.sunset - weather.timezone;
+                                                        effective_sunset_ms= weather.sunset + weather.timezone;
+                                                        console.log(effective_sunset_ms);
                                                         let sunset_time = new Date(effective_sunset_ms *
                                                         1000).toISOString().slice(11,16);
                                                         let sunset_hours = sunset_time.slice(0,2);
+                                                        console.log(new Date(effective_sunset_ms *1000).toISOString());
                                                         let sunset_minutes = sunset_time.slice(4,6);
                                                         
                                                         new_sunset_time = sunset_hours > 12 ?
