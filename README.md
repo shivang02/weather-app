@@ -31,40 +31,40 @@
 
 - **Desktop**<br>
   - Landing<br><br>
-<img src="./screenshots/desktop_landing_1.png" alt="Screenshot 1 (desktop landing page)" width="400" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/desktop_landing_1.png" alt="Screenshot 1 (desktop landing page)" width="400" style= "background-color: white">
+    <br><br>
   - On Blank Submission<br><br>
-<img src="./screenshots/desktop_landing_2.png" alt="Screenshot 2 (desktop landing page)" width="400" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/desktop_landing_2.png" alt="Screenshot 2 (desktop landing page)" width="400" style= "background-color: white">
+    <br><br>
   - On Succesful Submission<br><br>
-<img src="./screenshots/desktop_landing_3.png" alt="Screenshot 3 (desktop landing page)" width="400" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/desktop_landing_3.png" alt="Screenshot 3 (desktop landing page)" width="400" style= "background-color: white">
+    <br><br>
   - On Error<br><br>
-<img src="./screenshots/desktop_landing_4.png" alt="Screenshot 5 (desktop landing page)" width="400" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/desktop_landing_4.png" alt="Screenshot 5 (desktop landing page)" width="400" style= "background-color: white">
+    <br><br>
   - 404 page<br><br>
-<img src="./screenshots/desktop_404.png" alt="Screenshot 6(desktop landing page)" width="400" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/desktop_404.png" alt="Screenshot 6(desktop landing page)" width="400" style= "background-color: white">
+    <br><br>
 
 - **Mobile**<br>
   - Landing<br><br>
-<img src="./screenshots/mobile_landing_1.png" alt="Screenshot 1 (mobile landing page)" width="200" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/mobile_landing_1.png" alt="Screenshot 1 (mobile landing page)" width="200" style= "background-color: white">
+    <br><br>
   - On Blank Submission<br><br>
-<img src="./screenshots/mobile_landing_2.png" alt="Screenshot 2 (mobile landing page)" width="200" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/mobile_landing_2.png" alt="Screenshot 2 (mobile landing page)" width="200" style= "background-color: white">
+    <br><br>
   - On Succesful Submission<br><br>
-<img src="./screenshots/mobile_landing_3.png" alt="Screenshot 3 (mobile landing page)" width="200" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/mobile_landing_3.png" alt="Screenshot 3 (mobile landing page)" width="200" style= "background-color: white">
+    <br><br>
   - On Error<br><br>
-<img src="./screenshots/mobile_landing_4.png" alt="Screenshot 5 (mobile landing page)" width="200" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/mobile_landing_4.png" alt="Screenshot 5 (mobile landing page)" width="200" style= "background-color: white">
+    <br><br>
   - 404 page<br><br>
-<img src="./screenshots/mobile_404.png" alt="Screenshot 6(mobile landing page)" width="200" style= "background-color: white">
-<br><br>
+    <img src="./screenshots/mobile_404.png" alt="Screenshot 6(mobile landing page)" width="200" style= "background-color: white">
+    <br><br>
 
 ## How To Use
-You need <a href="https://nodejs.org>Node.js</a> installed to run this app.
+You need <a href="https://nodejs.org">Node.js</a> installed to run this app.
 Clone this repository and open index.html<br>
 From your command line:
 
